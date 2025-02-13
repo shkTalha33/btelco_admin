@@ -14,6 +14,10 @@ import "./index.css";
 import BlogCategory from "./components/pages/createBlogCategory";
 import HeaderService from "./components/pages/headerService";
 import ServiceCategory from "./components/pages/createServiceCategories";
+import Services from "./components/pages/services";
+import ServiceForm from "./components/pages/serviceForm";
+import StaticPage from "./components/pages/staticPages";
+import StaticPageForm from "./components/pages/staticPageForm";
 
 const NavHeader = lazy(() => import("./components/header/navHeader"));
 const SidebarMenu = lazy(() => import("./components/pages/sidebar"));
@@ -70,12 +74,16 @@ function App() {
             <Route element={<PrivateRoutes />}>
               <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/service/management" element={<Services />} />
+              <Route path="/service/form" element={<ServiceForm />} />
               <Route path="/service/header" element={<HeaderService />} />
               <Route path="/service/header/form" element={<HeaderForm />} />
               <Route path="/service/category" element={<ServiceCategory />} />
               <Route path="/blog/management" element={<BlogManagement />} />
               <Route path="/blog/form" element={<Blogs />} />
               <Route path="/blog/category" element={<BlogCategory />} />
+              <Route path="/static" element={<StaticPage />} />
+              <Route path="/static/header/form" element={<StaticPageForm />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

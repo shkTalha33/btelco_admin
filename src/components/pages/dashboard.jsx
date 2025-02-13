@@ -101,62 +101,6 @@ const Dashboard = () => {
     },
   ];
 
-  const StaffColumn = [
-    {
-      name: "#",
-      minWidth: "30px",
-      maxWidth: "40px",
-      cell: (_, index) => (
-        <span className="text-center flex items-center justify-center">
-          {index + 1 || "1"}
-        </span>
-      ),
-    },
-    {
-      name: "Logo",
-      minWidth: "50px",
-      maxWidth: "70px",
-      cell: (row) => (
-        <div className="rounded-full justify-center">
-          <ImageLoader
-            circeltrue={true}
-            imageUrl={row?.profile}
-            classes="rounded-full w-[35px] h-[35px]"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </div>
-      ),
-    },
-    {
-      name: "Name",
-      minWidth: "100px",
-      maxWidth: "250px",
-      cell: (row) => (
-        <div className="flex items-center justify-center">
-          <span>{row?.fname || "John"}</span>
-        </div>
-      ),
-    },
-    {
-      name: "Status",
-      minWidth: "110px",
-      maxWidth: "250px",
-      cell: (row) => (
-        <div className="flex items-center justify-center whitespace-nowrap">
-          <button
-            style={{
-              color: "#FF6550",
-              background: "#E5F0FF",
-            }}
-            className="rounded-full py-1 px-3 capitalize"
-          >
-            {row?.status}
-          </button>
-        </div>
-      ),
-    },
-  ];
-
   const fetchDashboardData = debounce(async () => {
     setDashboardDataLoading(true)
     await get(`${getDashboardData}${detailType}`)
@@ -166,7 +110,8 @@ const Dashboard = () => {
         }
       })
       .catch((err) => {
-        handleError(err);
+        // handleError(err);
+        console.log(err)
       })
       .finally(() => {
         setDashboardDataLoading(false)
@@ -187,7 +132,8 @@ const Dashboard = () => {
         }
       })
       .catch((err) => {
-        handleError(err);
+        console.log(err)
+        // handleError(err);
       })
       .finally(() => {
         setLoading(false);
@@ -205,7 +151,8 @@ const Dashboard = () => {
         setAllStaff(result?.staff);
       })
       .catch((err) => {
-        handleError(err);
+        console.log(err)
+        // handleError(err);
       })
       .finally(() => {
         setIsLoading(false);
@@ -238,14 +185,7 @@ const Dashboard = () => {
       </Container>
 
       <div className="md:flex gap-3 items-center flex-lg-nowrap w-full">
-        <div className="px-[1rem] md:px-5 mb-3 md:mb-0 py-3 h-full bg_white border rounded-lg border-white w-full md:w-3/5 min-h-[400px]">
-          <TransactionChart
-            data={dashboardData?.transactionGraph}
-            setDetailType={setDetailType}
-            isLoading={dashboardDataLoading}
-          />
-        </div>
-        <div className="w-full md:w-2/5 mb-3 md:mb-0 min-h-[400px] bg_white rounded-lg p-2 md:p-[1rem]">
+        <div className="w-full mb-3 md:mb-0 min-h-[400px] bg_white rounded-lg p-2 md:p-[1rem]">
           <ProductTable
             rowHeading={"Registered Firms"}
             columns={registerFirmColumn}

@@ -10,7 +10,7 @@ import * as Yup from "yup";
 import ApiFunction from "../api/apiFuntions";
 import { login, staffLogin } from "../api/ApiRoutesFile";
 import { handleError } from "../api/errorHandler";
-import { eye, eyeoff, valixLogo } from "../icons/icon";
+import { BtelcoLogo, eye, eyeoff, valixLogo } from "../icons/icon";
 import { setLogin, setToken, setUserData } from "../redux/loginForm";
 import HashLoader from "react-spinners/HashLoader";
 
@@ -71,8 +71,8 @@ const Login = () => {
       <div className="d-none flex justify-center d-md-flex flex-col items-start w-full lg:w-1/2 relative login-bg ">
         <div className="mr-auto relative px-5">
           <img
-            src={valixLogo}
-            alt="valix-logo"
+            src={BtelcoLogo}
+            alt="BtelcoLogo"
             width={"100px"}
             height={"90px"}
             className="object-cover"
@@ -80,12 +80,7 @@ const Login = () => {
         </div>
         <div>
           <p className="login-logo-text text_white poppins_medium px-5 py-2">
-            This accounting firm offers streamlined, personalized financial
-            services, specializing in tax returns, VAT, and payroll management.
-            With a user-friendly platform, clients can track progress in
-            real-time, communicate directly with accountants, and manage
-            payments seamlessly. We ensure accuracy, transparency, and
-            efficiency for all your accounting needs..
+          BTelco is a cybersecurity company specializing in threat detection, risk assessment, data encryption, and network security. With advanced technology and expert solutions, they protect businesses and individuals from cyber threats, malware, and data breaches. BTelco ensures digital security with tailored strategies, keeping clients safe in an increasingly connected world.
           </p>
         </div>
       </div>
@@ -192,7 +187,7 @@ const Login = () => {
                   disabled={isStaffLoading || isAdminLoading}
                   onClick={() => setIsStaffLogin(false)}
                   className={`${!isStaffLogin
-                    ? "bg_primary text_white"
+                    ? "bg-[#ffa500] text_white"
                     : "bg_white text_primary "
                     } inter_medium rounded-md border border_primary px-[1.5rem] py-[0.5rem] w-full`}
                 >

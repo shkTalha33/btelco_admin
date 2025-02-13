@@ -54,25 +54,21 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
         key: ["blogs"],
         subItems: [
           {
-            label: "Blogs",
-            path: "/blog/management",
-          },
-          {
             label: "Blog Categories",
             path: "/blog/category",
+          },
+          {
+            label: "Blogs",
+            path: "/blog/management",
           },
         ],
       },
       {
-        image: companies,
+        image: staff,
         items: "Service Management",
         path: null,
         key: ["service"],
         subItems: [
-          {
-            label: "Services",
-            path: "/service/management",
-          },
           {
             label: "Service Categories",
             path: "/service/category",
@@ -80,6 +76,10 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
           {
             label: "Service Header",
             path: "/service/header",
+          },
+          {
+            label: "Services",
+            path: "/service/management",
           },
         ],
       },
@@ -203,26 +203,12 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
     //     },
     //   ],
     // },
-    // {
-    //   image: support,
-    //   items: "Static Pages",
-    //   path: null,
-    //   key: ["static"],
-    //   subItems: [
-    //     // {
-    //     //   label: "Chat Support",
-    //     //   path: "/chat",
-    //     // },
-    //     {
-    //       label: "Terms & Conditions",
-    //       path: "/terms",
-    //     },
-    //     {
-    //       label: "Privacy & Policy",
-    //       path: "/privacy",
-    //     },
-    //   ],
-    // },
+    {
+      image: support,
+      items: "Static Pages",
+      path: "/static",
+      key: ["static"],
+    },
     // {
     //   image: setting,
     //   items: "System Setting",
@@ -292,12 +278,6 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
                 </div>
                 <Menu className="container mx-auto flex flex-col bg_dark justify-between h-full mt-4 ">
                   <div>
-                    <p
-                      style={{ width: "90%", margin: "auto", fontSize: "17px" }}
-                      className="text-secondary archivo_bold mb-2"
-                    >
-                      General
-                    </p>
                     {menuItems.map((item, i) => (
                       <Fragment key={i}>
                         {item.subItems ? (
@@ -320,7 +300,7 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
                                 }
                                 component={<Link to={subItem.path} />}
                                 className={`w-full archivo_regular dashboard-submenu-items text_white  mb-2  rounded-lg ${isChildPath(subItem.path, location.pathname)
-                                  ? "bg_primary bg-red-600 text_white archivo_semibold"
+                                  ? "bg-[orange] text_white archivo_semibold"
                                   : "text_white"
                                   }`}
                               >
@@ -337,7 +317,7 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
                             }
                             component={<Link to={item.path} />}
                             className={` mb-2 dashboard-menu-items rounded-lg  ${isChildPath(item.path, location.pathname)
-                              ? "bg_primary text_white archivo_semibold"
+                              ? "bg-[orange] text_white archivo_semibold"
                               : "text_white"
                               }`}
                           >
