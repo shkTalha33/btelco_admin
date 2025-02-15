@@ -3,6 +3,7 @@ import imageCompression from "browser-image-compression";
 import { isValidFileType } from "./isValidType";
 import { axiosInstance } from "./axiosInstance";
 import { imageUpload } from "./ApiRoutesFile";
+
 export const uploadFile = async (file) => {
   const token = localStorage.getItem('btelco_admin_panel');
   const header = {

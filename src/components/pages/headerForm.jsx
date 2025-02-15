@@ -58,8 +58,8 @@ export default function HeaderForm() {
   const image = watch("image");
 
   const onSubmit = async (data) => {
-    const apiEndpoint = `${headerCrud}`;
-    const method = post;
+    const apiEndpoint = selectedData ?  `${headerCrud}/${selectedData?.category}` : `${headerCrud}`;
+    const method = selectedData ? put : post;
     setIsLoading(true);
     await method(apiEndpoint, data)
       .then((result) => {

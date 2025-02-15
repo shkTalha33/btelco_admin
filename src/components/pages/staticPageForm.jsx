@@ -59,7 +59,7 @@ export default function StaticPageForm() {
 
   const onSubmit = async (data) => {
     const apiEndpoint = `${staticCrud}`;
-    const method = post;
+    const method = selectedData ? put : post;
     setIsLoading(true);
     await method(apiEndpoint, data)
       .then((result) => {
