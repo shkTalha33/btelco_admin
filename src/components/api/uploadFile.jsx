@@ -5,7 +5,6 @@ import { axiosInstance } from "./axiosInstance";
 import { imageUpload } from "./ApiRoutesFile";
 export const uploadFile = async (file) => {
   const token = localStorage.getItem('btelco_admin_panel');
-  console.log("token",token)
   const header = {
     "Content-Type": "multipart/form-data",
     "x-auth-token": token,
