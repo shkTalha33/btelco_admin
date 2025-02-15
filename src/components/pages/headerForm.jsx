@@ -181,6 +181,7 @@ export default function HeaderForm() {
                   render={({ field }) => (
                     <Input
                       type="select"
+                      disabled={selectedData}
                       {...field}
                       invalid={errors.category && true}
                     >

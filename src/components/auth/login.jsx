@@ -10,7 +10,7 @@ import * as Yup from "yup";
 import ApiFunction from "../api/apiFuntions";
 import { login, staffLogin } from "../api/ApiRoutesFile";
 import { handleError } from "../api/errorHandler";
-import { BtelcoLogo, eye, eyeoff, valixLogo } from "../icons/icon";
+import { bTechloTrans, BtelcoLogo, eye, eyeoff, valixLogo } from "../icons/icon";
 import { setLogin, setToken, setUserData } from "../redux/loginForm";
 import HashLoader from "react-spinners/HashLoader";
 
@@ -71,7 +71,7 @@ const Login = () => {
       <div className="d-none flex justify-center d-md-flex flex-col items-start w-full lg:w-1/2 relative login-bg ">
         <div className="mr-auto relative px-5">
           <img
-            src={BtelcoLogo}
+            src={bTechloTrans}
             alt="BtelcoLogo"
             width={"100px"}
             height={"90px"}

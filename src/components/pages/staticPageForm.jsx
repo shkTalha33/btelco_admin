@@ -170,6 +170,7 @@ export default function StaticPageForm() {
                   render={({ field }) => (
                     <Input
                       type="select"
+                      disabled={selectedData}
                       {...field}
                       invalid={errors.category && true}
                     >

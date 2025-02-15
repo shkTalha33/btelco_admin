@@ -158,6 +158,7 @@ export default function Blogs() {
                   render={({ field }) => (
                     <Input
                       type="select"
+                      disabled={selectedData}
                       {...field}
                       invalid={errors.category && true}
                     >
@@ -165,7 +166,7 @@ export default function Blogs() {
                       {categories.map((item) => (
                         <option
                           key={item?._id}
-                          value={item?._id}
+                          value={item?.title}
                           selected={selectedData?.category === item?._id}
                         >
                           {item?.title}

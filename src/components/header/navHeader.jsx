@@ -1,16 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { Menu, Transition } from "@headlessui/react";
-import React, { Fragment, useEffect, useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Navbar } from "react-bootstrap";
 import toast from "react-hot-toast";
-import { RiMenuFoldLine } from "react-icons/ri";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { decryptData } from "../api/encrypted";
-import { avatar1, profileArrow } from "../icons/icon";
-import { setLogout } from "../redux/loginForm";
+import { PiSignOutBold } from "react-icons/pi";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import ApiFunction from "../api/apiFuntions";
+import { setLogout } from "../redux/loginForm";
 
 const NavHeader = ({ broken, setToggled, toggled }) => {
   const [currentPage, setCurrentPage] = useState("/dashboard");
@@ -174,17 +171,17 @@ const NavHeader = ({ broken, setToggled, toggled }) => {
           <h3 className="text-2xl poppins_medium text_darkprimary d-none d-lg-block">
             {currentPage}
           </h3>
-          <button>
+          <button className="poppins_medium text-lg flex gap-2 items-center hover:text-red-600" onClick={handleLogout}>
             {
-              <RiMenuFoldLine
-                color="black"
-                className="d-lg-none"
+              <PiSignOutBold
+                color="red"
+                className=""
                 size={23}
-                onClick={HandleToggled}
               />
             }
+            Sign Out
           </button>
-
+          
         </Container>
       </Navbar>
     </>

@@ -10,7 +10,8 @@ import {
   staff,
   support,
   valixLogoWhite,
-  BtelcoLogo
+  BtelcoLogo,
+  bTechloTrans
 } from "../icons/icon";
 
 import { useSelector } from "react-redux";
@@ -270,10 +271,11 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
                     className=""
                   >
                     <img
-                      src={BtelcoLogo}
+                      src={bTechloTrans}
                       alt="valix Logo White"
-                      width={"120px"}
+                      width={"80px"}
                     />
+                    <p className="text_primary poppins_semibold text-lg">BTELCO</p>
                   </button>
                 </div>
                 <Menu className="container mx-auto flex flex-col bg_dark justify-between h-full mt-4 ">

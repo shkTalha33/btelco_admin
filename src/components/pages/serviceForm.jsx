@@ -19,6 +19,7 @@ import { serviceCrud, serviceCategoryCrud } from "../api/ApiRoutesFile";
 import { handleError } from "../api/errorHandler";
 import { uploadFile } from "../api/uploadFile.jsx";
 import FileUpload from "../dashboard/FileUpload.js";
+import CKEditorComponent from "../../utils/CkEditor2.jsx";
 
 export default function ServiceForm() {
   const [ckData, setCkData] = useState("");
@@ -38,7 +39,6 @@ export default function ServiceForm() {
     image: Yup.string().required("Header Image is required"),
     title: Yup.string().required("Title is required"),
     category: Yup.string().required("Header Category is required"),
-    description: Yup.string().required("Description is required"),
   });
 
   const {
@@ -55,10 +55,18 @@ export default function ServiceForm() {
   const image = watch("image");
 
   const onSubmit = async (data) => {
+    if (!ckData) {
+      toast.error("Description Cannot Be Empty");
+      return;
+    }
+    const formData = {
+      ...data,
+      description: ckData
+    }
     const apiEndpoint =  selectedData ?  `${serviceCrud}/${selectedData?._id}` : `${serviceCrud}`;
     const method = selectedData ? put : post;
     setIsLoading(true);
-    await method(apiEndpoint, data)
+    await method(apiEndpoint, formData)
       .then((result) => {
         if (result?.success) {
           toast.success(result?.message);
@@ -96,9 +104,9 @@ export default function ServiceForm() {
       reset({
         title: selectedData.title || "",
         category: selectedData.category || "",
-        description: selectedData.description || "",
       });
       setValue("image", selectedData?.image);
+      setCkData(selectedData.description || "");
     }
   }, [selectedData, reset]);
 
@@ -130,7 +138,7 @@ export default function ServiceForm() {
           className="px-[1rem] md:px-5 py-4 bg_white my-3 border rounded-lg border-white w-full"
         >
           <h4 className="inter_medium mb-4 text_darkprimary">
-            {selectedData ? "Update" : "Create"} Header
+            {selectedData ? "Update" : "Create"} Service
           </h4>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row>
@@ -178,6 +186,7 @@ export default function ServiceForm() {
                   render={({ field }) => (
                     <Input
                       type="select"
+                      disabled={selectedData}
                       {...field}
                       invalid={errors.category && true}
                     >
@@ -199,27 +208,9 @@ export default function ServiceForm() {
                   <FormFeedback>{errors.category.message}</FormFeedback>
                 )}
               </Col>
-              <Col md="6" className="mb-3 flex flex-col w-full">
-                <Label className="form-label" for="description">
-                  Description
-                </Label>
-                <Controller
-                  id="description"
-                  name="description"
-                  control={control}
-                  render={({ field }) => (
-                    <Input
-                      {...field}
-                      type="textarea" // Changed to textarea
-                      rows="10" // Adjust the height
-                      placeholder="Enter Description"
-                      invalid={errors.description && true}
-                    />
-                  )}
-                />
-                {errors.description && (
-                  <FormFeedback>{errors.description.message}</FormFeedback>
-                )}
+              <Col md="6" className="gap-3">
+                <Label>Description</Label>
+                <CKEditorComponent ckData={ckData} setCkData={setCkData} />
               </Col>
 
               <div className="w-100 my-3 text-end">

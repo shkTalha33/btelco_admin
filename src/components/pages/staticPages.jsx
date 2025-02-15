@@ -133,7 +133,7 @@ export default function StaticPage() {
   return (
     <>
       <main className="container p-4 mx-auto">
-        <PageHeading headingText="Static Page Header" headingDescription="You Can Add And Manage static page headers Here" buttonText="Add Header" path="/static/header/form" />
+        <PageHeading headingText="Static Page Header" headingDescription="You Can Add And Manage static page headers Here" buttonText="Add Static Header" path="/static/header/form" />
         <Container fluid className="bg-white rounded-lg p-4">
           <ProductTable
             rowHeading="List of Static Page Headers"

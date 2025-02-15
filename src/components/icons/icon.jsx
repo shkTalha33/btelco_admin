@@ -70,6 +70,7 @@ import support from "../assets/png/support.png"
 import NoData from "../assets/png/noData.webp"
 
 import BtelcoLogo from "../assets/png/tans_logo.png"
+import bTechloTrans from "../assets/png/b_techlo_trans.png"
 
 
 export {
@@ -139,5 +140,5 @@ export {
   pdfIcon,
   support,
   NoData,
-  BtelcoLogo
+  BtelcoLogo, bTechloTrans
 };

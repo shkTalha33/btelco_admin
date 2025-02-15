@@ -97,8 +97,8 @@ export default function Services() {
       },
     {
       name: "Title",
-      minWidth: "400px",
-      maxWidth: "500px",
+      minWidth: "200px",
+      maxWidth: "250px",
       cell: (row) => <div>{row?.title || "N/A"}</div>,
     },
     {
@@ -109,10 +109,16 @@ export default function Services() {
     },
     {
       name: "Description",
-      minWidth: "250px",
-      maxWidth: "300px",
-      cell: (row) => <div>{row?.description || "N/A"}</div>,
+      minWidth: "400px",
+      maxWidth: "500px",
+      cell: (row) => (
+        <div
+          className="line-clamp-2"
+          dangerouslySetInnerHTML={{ __html: row?.description || "N/A" }}
+        />
+      ),
     },
+    
     {
       name: "Actions",
       minWidth: "100px",

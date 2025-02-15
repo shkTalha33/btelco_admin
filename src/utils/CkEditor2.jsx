@@ -77,7 +77,6 @@ const CKEditorComponent = ({ ckData, setCkData }) => {
             "link",
             "bulletedList",
             "numberedList",
-            "imageUpload",
             "blockQuote",
             "undo",
             "redo",

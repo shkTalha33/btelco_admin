@@ -1,13 +1,14 @@
 
 import imageCompression from "browser-image-compression";
 import { isValidFileType } from "./isValidType";
-import { axiosInstance, token } from "./axiosInstance";
+import { axiosInstance } from "./axiosInstance";
 import { imageUpload } from "./ApiRoutesFile";
-const header = {
-  "Content-Type": "multipart/form-data",
-  "x-auth-token": token,
-};
 export const uploadFile = async (file) => {
+  const token = localStorage.getItem('btelco_admin_panel');
+  const header = {
+    "Content-Type": "multipart/form-data",
+    "x-auth-token": token,
+  };
   try {
     const check = isValidFileType(file);
     if (!check) {

@@ -133,7 +133,7 @@ export default function HeaderService() {
   return (
     <>
       <main className="container p-4 mx-auto">
-        <PageHeading headingText="Header" headingDescription="You Can Add And Manage headers Here" buttonText="Add Header" path="/service/header/form" />
+        <PageHeading headingText="Header" headingDescription="You Can Add And Manage headers Here" buttonText="Add Service Header" path="/service/header/form" />
         <Container fluid className="bg-white rounded-lg p-4">
           <ProductTable
             rowHeading="List of Headers"
