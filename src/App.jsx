@@ -18,6 +18,8 @@ import Services from "./components/pages/services";
 import ServiceForm from "./components/pages/serviceForm";
 import StaticPage from "./components/pages/staticPages";
 import StaticPageForm from "./components/pages/staticPageForm";
+import LandingServices from "./components/pages/landingServices";
+import LandingServiceForm from "./components/pages/landingServiceForm";
 
 const NavHeader = lazy(() => import("./components/header/navHeader"));
 const SidebarMenu = lazy(() => import("./components/pages/sidebar"));
@@ -78,6 +80,8 @@ function App() {
               <Route path="/service/form" element={<ServiceForm />} />
               <Route path="/service/header" element={<HeaderService />} />
               <Route path="/service/header/form" element={<HeaderForm />} />
+              <Route path="/landing/service" element={<LandingServices />} />
+              <Route path="/landing/service/form" element={<LandingServiceForm />} />
               <Route path="/service/category" element={<ServiceCategory />} />
               <Route path="/blog/management" element={<BlogManagement />} />
               <Route path="/blog/form" element={<Blogs />} />

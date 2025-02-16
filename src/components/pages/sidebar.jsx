@@ -82,6 +82,10 @@ const SidebarMenu = ({ children, setToggled, toggled, setBroken }) => {
             label: "Services",
             path: "/service/management",
           },
+          {
+            label: "Home Page Services",
+            path: "/landing/service",
+          },
         ],
       },
     // {
