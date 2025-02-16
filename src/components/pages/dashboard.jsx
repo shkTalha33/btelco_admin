@@ -111,7 +111,7 @@ const Dashboard = () => {
       })
       .catch((err) => {
         // handleError(err);
-        console.log(err)
+        // console.log(err)
       })
       .finally(() => {
         setDashboardDataLoading(false)
@@ -132,7 +132,7 @@ const Dashboard = () => {
         }
       })
       .catch((err) => {
-        console.log(err)
+        // console.log(err)
         // handleError(err);
       })
       .finally(() => {
@@ -151,7 +151,7 @@ const Dashboard = () => {
         setAllStaff(result?.staff);
       })
       .catch((err) => {
-        console.log(err)
+        // console.log(err)
         // handleError(err);
       })
       .finally(() => {
