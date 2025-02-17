@@ -7,6 +7,7 @@ const serviceCategoryCrud = "/service/category"
 const serviceCrud = "/service"
 const landingServiceCrud = "/landing/service"
 const staticCrud = "/static/page"
+const dashboardMetrices = "/metrices"
 
 const createAdmin = "users/admin/company-admin/"
 const checkAdminEmail = "users/admin/check-email"
@@ -70,5 +71,5 @@ const attendSupport = 'support/attended'
 
 export {
   getAllConversation, getUserMessages, seenMessage, privacyPages, faqCat, createSupport, getSupports, attendSupport, createPackage, getPackages, editPackage, deletePackage, getCompanies, imageUpload, createFirm, updateFirm, checkFirmPhone, checkFirmEmail, checkAdminEmail, createAdmin, addStaff, getStaff, updateStaff, staffLogin, checkStaffEmail, faqCreate, faqEdit, faqDelete, faqGet, emailConfigureCreate, emailConfigureSend, emailConfigureGet, getDashboardData, getCompaniesSubscriptions, getSubscriptionsTransitions, subscriptionCount,
-  blogCrud, headerCrud, login, blogCategoryCrud, serviceCategoryCrud, serviceCrud, staticCrud, landingServiceCrud
+  blogCrud, headerCrud, login, blogCategoryCrud, serviceCategoryCrud, serviceCrud, staticCrud, dashboardMetrices, landingServiceCrud
 }
