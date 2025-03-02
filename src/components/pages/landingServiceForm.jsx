@@ -217,6 +217,7 @@ export default function LandingServiceForm() {
                       rows="10" // Adjust the height
                       placeholder="Enter Description"
                       invalid={errors.description && true}
+                        className="!h-24 resize-none"
                     />
                   )}
                 />

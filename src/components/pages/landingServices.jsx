@@ -82,8 +82,8 @@ export default function LandingServices() {
     },
     {
       name: "Image",
-      minWidth: "100px",
-      maxWidth: "120px",
+      minWidth: "60px",
+      maxWidth: "80px",
       cell: (row) => (
         <div className="flex items-center justify-center">
           <ImageLoader
@@ -103,8 +103,8 @@ export default function LandingServices() {
     },
     {
       name: "Description",
-      minWidth: "400px",
-      maxWidth: "500px",
+      minWidth: "300px",
+      maxWidth: "400px",
       cell: (row) => <div className="line-clamp-2">{row?.description || "N/A"}</div>,
     },
     {

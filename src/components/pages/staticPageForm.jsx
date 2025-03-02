@@ -11,14 +11,11 @@ import {
   Input,
   Label,
   Row,
-  Spinner
+  Spinner,
 } from "reactstrap";
 import * as Yup from "yup";
 import ApiFunction from "../api/apiFuntions";
-import {
-    staticCrud,
-  serviceCategoryCrud,
-} from "../api/ApiRoutesFile";
+import { staticCrud, serviceCategoryCrud } from "../api/ApiRoutesFile";
 import { handleError } from "../api/errorHandler";
 import { uploadFile } from "../api/uploadFile.jsx";
 import FileUpload from "../dashboard/FileUpload.js";
@@ -105,13 +102,13 @@ export default function StaticPageForm() {
     }
   }, [selectedData, reset]);
   const categoriesData = [
-    {id: "about", title: "about"},
-    {id: "contact", title: "contact"},
-    {id: "blog", title: "blog"},
-  ]
+    { id: "about", title: "about" },
+    { id: "contact", title: "contact" },
+    { id: "blog", title: "blog" },
+  ];
 
   useEffect(() => {
-    setCategories(categoriesData)
+    setCategories(categoriesData);
   }, []);
 
   return (
@@ -207,6 +204,7 @@ export default function StaticPageForm() {
                       rows="10" // Adjust the height
                       placeholder="Enter Description"
                       invalid={errors.description && true}
+                      className="!h-24 resize-none"
                     />
                   )}
                 />

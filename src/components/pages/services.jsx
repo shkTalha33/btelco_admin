@@ -82,8 +82,8 @@ export default function Services() {
     },
     {
       name: "Image",
-      minWidth: "100px",
-      maxWidth: "120px",
+      minWidth: "60px",
+      maxWidth: "80px",
       cell: (row) => (
         <div className="flex items-center justify-center">
           <ImageLoader
@@ -109,8 +109,8 @@ export default function Services() {
     },
     {
       name: "Description",
-      minWidth: "400px",
-      maxWidth: "500px",
+      minWidth: "300px",
+      maxWidth: "400px",
       cell: (row) => (
         <div className="line-clamp-2">{row?.description || "N/A"}</div>
       ),
@@ -150,7 +150,7 @@ export default function Services() {
         />
         <Container fluid className="bg-white rounded-lg p-4">
           <ProductTable
-            rowHeading="List of Service"
+            rowHeading="List of Services"
             columns={column}
             data={data}
             itemsPerPage={itemsPerPage}

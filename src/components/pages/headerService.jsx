@@ -103,8 +103,8 @@ export default function HeaderService() {
     },
     {
       name: "Description",
-      minWidth: "400px",
-      maxWidth: "500px",
+      minWidth: "300px",
+      maxWidth: "400px",
       cell: (row) => <div className="line-clamp-2">{row?.description || "N/A"}</div>,
     },
     {

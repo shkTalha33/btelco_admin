@@ -214,12 +214,14 @@ const BlogCategory = () => {
                   {"You can add blog categories here"}
                 </p>
               </div>
+              <div className="">
               <button
                 onClick={() => setModalOpen(true)}
-                className="bg_primary text_white px-3 py-1 rounded-3 plusJakara_medium"
+                className="bg_primary text_white px-3 py-2 rounded-3 plusJakara_medium"
               >
                 Create Category
               </button>
+              </div>
             </div>
           </Card>
         </Container>

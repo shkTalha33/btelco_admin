@@ -81,9 +81,9 @@ export default function BlogManagement() {
     },
     {
       name: "Title",
-      minWidth: "400px",
-      maxWidth: "500px",
-      cell: (row) => <div>{row?.title || "N/A"}</div>,
+      minWidth: "300px",
+      maxWidth: "300px",
+      cell: (row) => <div className="line-clamp-2">{row?.title || "N/A"}</div>,
     },
     {
       name: "Category",

@@ -82,8 +82,8 @@ export default function StaticPage() {
     },
     {
       name: "Image",
-      minWidth: "100px",
-      maxWidth: "120px",
+      minWidth: "60px",
+      maxWidth: "80px",
       cell: (row) => (
         <div className="flex items-center justify-center">
           <ImageLoader
@@ -97,15 +97,15 @@ export default function StaticPage() {
     },
     {
       name: "Title",
-      minWidth: "200px",
-      maxWidth: "400px",
+      minWidth: "150px",
+      maxWidth: "250px",
       cell: (row) => <div>{row?.title || "N/A"}</div>,
     },
     {
       name: "Description",
-      minWidth: "400px",
-      maxWidth: "500px",
-      cell: (row) => <div>{row?.description || "N/A"}</div>,
+      minWidth: "300px",
+      maxWidth: "400px",
+      cell: (row) => <div className="line-clamp-2">{row?.description || "N/A"}</div>,
     },
     {
       name: "Category",
