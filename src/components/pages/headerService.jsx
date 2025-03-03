@@ -34,7 +34,7 @@ export default function HeaderService() {
   const handleDelete = async () => {
     if (!selectedHeader) return;
     setLoading(true);
-      await deleteData(`${headerCrud}/${selectedHeader?.category}`)
+      await deleteData(`${headerCrud}/${selectedHeader?._id}`)
       .then((result) => {
         if (result?.success) {
           toast.success(result?.message)

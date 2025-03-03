@@ -58,7 +58,7 @@ export default function HeaderForm() {
   const image = watch("image");
 
   const onSubmit = async (data) => {
-    const apiEndpoint = selectedData ?  `${headerCrud}/${selectedData?.category}` : `${headerCrud}`;
+    const apiEndpoint = selectedData ?  `${headerCrud}/${selectedData?._id}` : `${headerCrud}`;
     const method = selectedData ? put : post;
     setIsLoading(true);
     await method(apiEndpoint, data)
@@ -181,7 +181,6 @@ export default function HeaderForm() {
                   render={({ field }) => (
                     <Input
                       type="select"
-                      disabled={selectedData}
                       {...field}
                       invalid={errors.category && true}
                     >
